@@ -15,6 +15,16 @@
 }
 
 
+获取路径的文件名称和目录名称
+{
+	basename 路径：这个是获取路径的名称
+		basename /etc/sysconfig/network  --》  network
+		
+	dirname 路径：这个是获取路径的 路径
+		dirname	 /etc/sysconfig/network	 --》  /etc/sysconfig
+}
+
+
 关机
 {
 	sync	同步修改到磁盘
@@ -73,7 +83,7 @@
 	
 	vim		
 	
-	
+	touch	创建空文件
 }
 
 
