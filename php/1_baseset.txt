@@ -1,0 +1,28 @@
+##基本设置
+
+使用Apache支持，最简单配置
+{
+	1. 找到Apache安装目录下conf\httpd.conf 文件进行修改
+	
+		最底下添加：
+			LoadModule php7_module [php本地安装路径]\php7apache2_4.dll
+			AddType application/x-httpd-php .php .html .htm
+			#LoadModule php7_module modules/libphp7.so  
+			PHPIniDir [php本地安装路径]
+}
+
+
+本身设置
+{
+	1. 安装目录找到 php.ini-Development
+	
+		修改为：php.ini
+	
+	2. 打开修改设置
+		
+		default_charset = "UTF-8"
+		date.timezone = Asia/Shanghai
+		
+		将需要的扩展 ;extension=*******  取消前面的[;]  变为启用
+}
+

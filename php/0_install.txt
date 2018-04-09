@@ -1,0 +1,8 @@
+##安装
+
+下载地址：http://windows.php.net/download
+
+安装
+{
+	1. 进入下载地址选择下载项
+}
