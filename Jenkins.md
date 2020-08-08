@@ -1,5 +1,4 @@
 ## JenKins
-ff17cad4c9ed41afb776780e9c31c124
 	一个基于Java开发的自动化部署工具
 	前提：需要安装JDK
 
