@@ -1,8 +1,8 @@
-##文件与目录管理
+### 文件与目录管理
 
 
-文件与目录列表
-{
+> 文件与目录列表
+
 	命令：默认会以文档名排序
 		ls [-aAdfFhilnrRSt] 目录名称
 		ls [--color={never,auto,always}] 目录名称
@@ -34,12 +34,10 @@
 		--color=auto:   让系统根据配置是否显示颜色
 		--full-time: 	以完整时间模式 输出
 		--time={atime,ctime}: 输出 access 时间或改变权限属性时间(ctime) 而非内容变更时间9modification time)
-	
-}
 
 
-复制文件或目录
-{
+> 复制文件或目录
+
 	命令：
 		cp [-adfilprsu] 来源档(source) 目标档(destination)
 		cp [options] source1 source2 source3 ... directory
@@ -59,11 +57,9 @@
 		-u: 若目标档 比 来源档 旧才升级 目标档
 		
 	注意：如果来源档有两个以上，那么最后一个目的档一定要是【目录】，表示将所有来源档 复制到目录
-}
 
+> 删除文件或目录
 
-删除文件或目录
-{
 	命令：
 		rm [-fir] 文件或目录
 	
@@ -73,11 +69,9 @@
 		-r: 递归删除
 		
 	如果不需要询问可以使用：\ 标识命令，如 \rm -r /tmp
-}
 
+> 移动、更名文件或目录 
 
-移动 更名文件或目录 
-{
 	命令：
 		mv [-fiu] source destination
 		mv [options] source1 source2 source3 ... directory
@@ -89,4 +83,4 @@
 		-u:	若目标文件存在，且source比较新，才会升级
 		
 	注意：如果来源档有两个以上，那么最后一个目的档一定要是【目录】，表示将所有来源档 复制到目录
-}
+
