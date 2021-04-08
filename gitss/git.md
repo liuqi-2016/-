@@ -285,6 +285,7 @@
 `参数：`
 
 *	`<stash@{commitid}>	可选，恢复到指定commitid的工作现场`
+*	eg：git stash apply "stash@{0}"
 
 >**删除工作现场**
 
