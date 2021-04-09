@@ -70,8 +70,9 @@ gitlab(10.88.22.77)，jenkins(10.88.22.67)，nginx(10.1.245.101)
 
 
 ### 添加构建任务
+
 > 新建一个视图，选择视图新建Item，添加后直接进入配置页
-#### 1、自由风格任务
+#### 一、自由风格任务
 
 ![jenkins添加自由风格item](images/gitlab_jenkins_nginx/jenkins添加自由风格item.png)
 
@@ -142,6 +143,34 @@ Exec command: systemctl restart nginx
 > **`6、开始构建页面`**
 
 ![jenkins添加自由风格item_配置完成_开始构建页面](images/gitlab_jenkins_nginx/jenkins添加自由风格item_配置完成_开始构建页面.png)
+
+
+
+------
+
+
+
+#### 二、流水线
+> General的配置跟自由风格的一样，设置git参数和选择参数，然后直接到流水线的设置，流水线都是脚本
+>
+> 流水线构建可以显示执行步骤
+
+![jenkins添加流水线Item](images/gitlab_jenkins_nginx/jenkins添加流水线Item.png)
+
+------
+![jenkins添加流水线Item_设置流水线脚本](images/gitlab_jenkins_nginx/jenkins添加流水线Item_设置流水线脚本.png)
+
+------
+> 1、直接填写流水线脚本，这里省略，使用下面的【流水线语法】去生成粘贴到这里就行
+
+> 2、通过SCM获取Jenkinsfile文件，文件里的内容跟【1】中的一样
+
+![jenkins添加流水线Item_设置流水线脚本_从SCM获取脚本文件](images/gitlab_jenkins_nginx/jenkins添加流水线Item_设置流水线脚本_从SCM获取脚本文件.png)
+
+![jenkins添加流水线Item_设置流水线脚本_从SCM获取脚本文件1](images/gitlab_jenkins_nginx/jenkins添加流水线Item_设置流水线脚本_从SCM获取脚本文件1.png)
+
+![jenkins添加自由风格item_开始构建页面](images/gitlab_jenkins_nginx/jenkins添加自由风格item_开始构建页面.png)
+
 
 
 [1]: http://updates.jenkins-ci.org/download/plugins/
