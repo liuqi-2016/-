@@ -12,58 +12,62 @@ gitlab(10.88.22.77)，jenkins(10.88.22.67)，nginx(10.1.245.101)
 
 - [x] ***安装插件***
 > 手动安装快些，[下载地址][1]，主要安装下面两个，其他的插件一般在安装jenkins时已经安装好了，有些插件不匹配需要将jenkins升级到最新版本
+
 	构建时设置git参数：Build With Parameters
+	
 	构建后发布到服务器：Publish Over SSH
 
 
 - [x] ***全局工具配置***
 
 ------
-<img src=".\images\gitlab_jenkins_nginx\jenkins全局工具配置.png" alt="jenkins全局工具配置"  />
+<img src=".\images\gitlab_jenkins_nginx\jenkins_globaltoolconfig.png" alt="jenkins全局工具配置"  />
 
 ------
 > **1、gitlab使用的git所在路径**
 
-![jenkins全局工具配置1](.\images\gitlab_jenkins_nginx\jenkins全局工具配置1.png)
+![jenkins全局工具配置1](.\images\gitlab_jenkins_nginx\jenkins_globaltoolconfig1.png)
 
 ------
 > **2、全局nodejs环境**
 
-![jenkins全局工具配置3](.\images\gitlab_jenkins_nginx\jenkins全局工具配置3.png)
+![jenkins全局工具配置3](.\images\gitlab_jenkins_nginx\jenkins_globaltoolconfig3.png)
 
 - [x] ***系统配置***
 
 ------
-![jenkins系统配置](.\images\gitlab_jenkins_nginx\jenkins系统配置.png)
+![jenkins系统配置](.\images\gitlab_jenkins_nginx\jenkins_systemconfig.png)
 
 ------
 > **1、配置全局gitlab，可以配置也可以不配置**
 
-![jenkins系统配置1](.\images\gitlab_jenkins_nginx\jenkins系统配置1.png)
+![jenkins系统配置1](.\images\gitlab_jenkins_nginx\jenkins_systemconfig1.png)
 
 ------
 > **1.1、获取gitlab用户的token，先看设置里的Account，没有就去Account Token里面新增一个**
 
-![jenkins系统配置2_gitlab_token1](.\images\gitlab_jenkins_nginx\jenkins系统配置2_gitlab_token1.png)
-![jenkins系统配置2_gitlab_token](.\images\gitlab_jenkins_nginx\jenkins系统配置2_gitlab_token.png)
+![jenkins系统配置2_gitlab_token1](.\images\gitlab_jenkins_nginx\jenkins_systemconfig2_gitlab_token1.png)
+![jenkins系统配置2_gitlab_token](.\images\gitlab_jenkins_nginx\jenkins_systemconfig2_gitlab_token.png)
 
 ------
 > 1.2、**给全局gitlab添加凭证，点击`添加`，选择`jenkins`，添加好凭证会在旁边的下拉项出现，右边`Test Connection`测试下是否能链接成功**
 
-![jenkins系统配置3](.\images\gitlab_jenkins_nginx\jenkins系统配置3.png)
+![jenkins系统配置3](.\images\gitlab_jenkins_nginx\jenkins_systemconfig3.png)
 
 > **2、配置publish over ssh，构建后发布到的nginx服务器，设置好可以点击`Test Connection`测试是否连接成功**
 
-![jenkins系统配置4_publishoverssh](.\images\gitlab_jenkins_nginx\jenkins系统配置4_publishoverssh.png)
+![jenkins系统配置4_publishoverssh](.\images\gitlab_jenkins_nginx\jenkins_systemconfig4_publishoverssh.png)
      ***上面配置的密码Passphrase，是针对下面所有的ssh servers，每个ssh servers都可以设置自己的密码***
 
 ------
-![jenkins系统配置4_publishoverssh1](.\images\gitlab_jenkins_nginx\jenkins系统配置4_publishoverssh1.png)
-     ***每个ssh servers都能在右下角【高级】中配置自己的密码****
+![jenkins系统配置4_publishoverssh1](.\images\gitlab_jenkins_nginx\jenkins_systemconfig4_publishoverssh1.png)
+     ***每个ssh servers都能在右下角【高级】中配置自己的密码***
 
 
 
 ------
+
+
 
 ### 添加构建任务
 > 新建一个视图，选择视图新建Item，添加后直接进入配置页
