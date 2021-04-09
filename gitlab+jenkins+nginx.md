@@ -141,7 +141,7 @@ Exec command: systemctl restart nginx
 
 > **`6、开始构建页面`**
 
-![jenkins添加自由风格item_配置完成_开始构建页面](E:/lwh/github/Study/images/gitlab_jenkins_nginx/jenkins添加自由风格item_配置完成_开始构建页面.png)
+![jenkins添加自由风格item_配置完成_开始构建页面](images/gitlab_jenkins_nginx/jenkins添加自由风格item_配置完成_开始构建页面.png)
 
 
 [1]: http://updates.jenkins-ci.org/download/plugins/
