@@ -80,7 +80,7 @@ gitlab(10.88.22.77)，jenkins(10.88.22.67)，nginx(10.1.245.101)
 > **`1、设置构建时选择的参数`**
 
 ![jenkins添加自由风格item_配置任务](images/gitlab_jenkins_nginx/jenkins添加自由风格item_配置任务.png)
-     ***这里没有配置全局gitlab，所有下拉项没有选项***
+     ***这里没有配置全局gitlab，所以下拉项没有选项***
      
 
 ------
@@ -118,7 +118,7 @@ gitlab(10.88.22.77)，jenkins(10.88.22.67)，nginx(10.1.245.101)
 ------
 
 ![jenkins添加自由风格item_配置任务_构建步骤1](images/gitlab_jenkins_nginx/jenkins添加自由风格item_配置任务_构建步骤1.png)
-***这里填写如下，使用了参数配置中的环境变量草书`envrionment`：
+***这里填写如下，使用了参数配置中的环境变量 `envrionment`：
 `npm cache clean --force
 npm install
 rm -rf dist/*
