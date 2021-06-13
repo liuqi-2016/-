@@ -34,8 +34,8 @@
 
 
 > 改变所属群组：
-
-	chgrp [-R] dir/file			
+   
+	chgrp [-R] groupname dir/file			 
 		[-R] 进行递归(recursive)的持续更改
 
 > 改变拥有者：
@@ -78,5 +78,4 @@
 		chomd u=rwx,go=rx dir/file
 		
 		chmod a+w dir/file
-
 
