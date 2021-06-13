@@ -243,6 +243,7 @@
 
 	git branch --set-upstream-to/-u <branchname1> <originname>/<branchname2>
 `参数：`
+
 *	`<branchname1>：可选，本地分支名称，省略表示将当前所在分支跟踪 远程分支`
 *	`<originname>：远程版本库名字`
 *	`<branchname2>：远程版本库中分支的名称`
@@ -259,6 +260,25 @@
 	   提交时的描述；
 
 	git branch -vv
+
+>**获取远程分支并创建本地分支1**
+	   本地分支会跟远程分支建立映射关系
+
+	git checkout -b <localbranch> origin/<remotebranch>
+`参数：`
+
+*	`<localbranch>：本地分支名称`
+*	`<remotebranch>：远程分支名称`
+
+>**获取远程分支并创建本地分支2**
+	   本地分支不会与远程分支建立映射关系，需要手动建立
+
+	git fetch origin <remotebranch>:<localbranch>
+`参数：`
+*	`<localbranch>：本地分支名称`
+*	`<remotebranch>：远程分支名称`
+
+
 
 ### 分支管理--Stash
 
@@ -285,6 +305,7 @@
 `参数：`
 
 *	`<stash@{commitid}>	可选，恢复到指定commitid的工作现场`
+*	eg：git stash apply "stash@{0}"
 
 >**删除工作现场**
 

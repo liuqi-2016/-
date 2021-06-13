@@ -284,3 +284,19 @@
  `软连接放在 /usr/local/sbin 目录下，这样可以在任何地方使用 nginx`
 
 	ln -n /usr/local/nginx/sbin/nginx /usr/local/sbin
+
+> 9.可能出现的问题
+
+	执行: service nginx status，显示: env: /etc/init.d/nginx: No such file or directory
+  这个一般是配置的systemctl命令操作的文件（就是/etc/init.d/nginx这个）是在windows里面写的，出现换行符不一致的情况需要转换，看下：https://www.cnblogs.com/telwanggs/p/12945801.html
+
+	执行: systemctl start nginx，不能启动nginx，报错提示：Failed to start SYSV: NGINX is an HTTP(S) server, HTTP(S) reverse proxy and IMAP/POP3 proxy server. 报错信息Process: 38258 ExecStart=/etc/rc.d/init.d/nginx start (code=exited, status=203/EXEC)。 但是在安装目录下使用：./sbin/nginx 却可以启动
+  原因：安装好后，最初使用了 ./sbin/nginx 启动，在使用 ./sbin/nginx -s quit 退出时并没有全部杀掉nginx的进程
+  解决：
+  使用 ./sbin/nginx -c /usr/local/nginx/conf/nginx.conf 再次启动；
+  查看进程 netstat -nplt
+  将nginx的进程kill掉 kill -9 进程ID，   可能有多个nginx进程，杀掉后多查看几次进程
+  重启下 reboot
+  再次执行 systemctl  或  service 基本就可以了
+  具体看：https://blog.csdn.net/java0506/article/details/109115895?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.control&dist_request_id=1328769.81929.16177757862394429&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.control
+
