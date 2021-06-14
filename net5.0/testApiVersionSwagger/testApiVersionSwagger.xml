@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>testApiVersionSwagger</name>
+    </assembly>
+    <members>
+        <member name="T:testApiVersionSwagger.Controllers.HomeController">
+            <summary>
+            版本1.0控制器
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Controllers.HomeController.Login(testApiVersionSwagger.DTO.LoginUser)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="loginUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:testApiVersionSwagger.Controllers.HomeController.GetAllEmployee(testApiVersionSwagger.DTO.SearchEmpDTO,testApiVersionSwagger.ModelBinder.TokenModel)">
+            <summary>
+            获取全部职员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:testApiVersionSwagger.Controllers.HomeController.AddEmployee(testApiVersionSwagger.DTO.SearchEmpDTO,testApiVersionSwagger.ModelBinder.TokenModel)">
+            <summary>
+            新增职员
+            </summary>
+            <param name="newEmpDto"></param>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:testApiVersionSwagger.Controllers.WeatherForecastController">
+            <summary>
+            2.0版本控制器
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{testApiVersionSwagger.Controllers.WeatherForecastController})">
+            <summary>
+            构造
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:testApiVersionSwagger.Controllers.WeatherForecastController.Get">
+            <summary>
+            get方式获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:testApiVersionSwagger.DTO.LoginUser">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.LoginUser.TenantId">
+            <summary>
+            tenantId
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.LoginUser.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.LoginUser.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.DTO.SearchEmpDTO">
+            <summary>
+            查询全部职员
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.SearchEmpDTO.empName">
+            <summary>
+            职员姓名
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.SearchEmpDTO.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.SearchEmpDTO.domainAccount">
+            <summary>
+            域账号
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.DTO.SearchEmpDTO.status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.ModelBinder.TokenModel">
+            <summary>
+            Token模型
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.ModelBinder.TokenModel.ValidateTo">
+            <summary>
+            有效时间
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.ModelBinder.TokenModel.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.ModelBinder.TokenModelBinder">
+            <summary>
+            TokenModel模型绑定，这里给Action中 TokenModel类型的参数设置值
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.ModelBinder.TokenModelBinder.#ctor">
+            <summary>
+            如果需要其他对象，可以在这里构造函数注入的方式加入进来
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.ModelBinder.TokenModelBinderProvider">
+            <summary>
+            模型绑定提供程序，可以通过ModelType判断 使用哪个自定义模型绑定
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.ModelBinder.TokenModelBinderProvider.GetBinder(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext)">
+            <summary>
+            获取模型绑定类型
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:testApiVersionSwagger.ModelBinder.TokenValidateAttribute">
+            <summary>
+            Token验证，在Action执行时
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:testApiVersionSwagger.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:testApiVersionSwagger.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:testApiVersionSwagger.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.Swagger.ConfigureSwaggerOptions">
+            <summary>
+            动态配置swagger文档生成
+            通过【IApiVersionDescriptionProvider】Api版本服务为每个API版本生成对应的swagger文档
+            </summary>
+        </member>
+        <member name="F:testApiVersionSwagger.Swagger.ConfigureSwaggerOptions.provider">
+            <summary>
+            API版本描述
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            初始化，自动注入API版本描述，这个将用于生成swagger文档
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:testApiVersionSwagger.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            根据API版本描述 生成swagger文档
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:testApiVersionSwagger.Swagger.ParameterFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.Swagger.ParameterFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Action过滤器，每个Action都会走一遍这个里，所有可以在这里对Action做些操作
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:testApiVersionSwagger.VersionDefined.V1Attribute">
+            <summary>
+            v1.0 版本号
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.VersionDefined.V1Attribute.#ctor">
+            <summary>
+            版本1.0
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.VersionDefined.V2Attribute">
+            <summary>
+            v2.0 版本号
+            </summary>
+        </member>
+        <member name="M:testApiVersionSwagger.VersionDefined.V2Attribute.#ctor">
+            <summary>
+            版本2.0
+            </summary>
+        </member>
+        <member name="T:testApiVersionSwagger.WeatherForecast">
+            <summary>
+            test
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.WeatherForecast.Date">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.WeatherForecast.TemperatureC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.WeatherForecast.TemperatureF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiVersionSwagger.WeatherForecast.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

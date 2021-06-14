@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>testApiSwagger</name>
+    </assembly>
+    <members>
+        <member name="T:testApiSwagger.Controllers.v2.ConventionController">
+            <summary>
+            自定义约定分配action给到对应的swagger文档中显示
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Controllers.v2.ConventionController.ShowToV2Doc">
+            <summary>
+            通过自定义约定分配给swagger文档的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:testApiSwagger.Controllers.WeatherForecastController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{testApiSwagger.Controllers.WeatherForecastController})">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.Get">
+            <summary>
+            get请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.GetById(System.Int32)">
+            <summary>
+            指定返回的状态和类型
+            </summary>
+            <remarks>test get by id</remarks>
+            <param name="id" example="123">ID</param>
+            <response code="200">返回对象</response>
+            <response code="400">返回错误字典</response>
+            <response code="500">返回错误信息</response>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.Search(System.String,testApiSwagger.Controllers.PagesParams)">
+            <summary>
+            指定必选参数
+            1.设置BindRequired 
+            2.参数如果是对象，在对象中设置[Required]特性
+            </summary>
+            <param name="keywords">关键字</param>
+            <param name="pagesParams">分页参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.Put(testApiSwagger.Controllers.PagesParams)">
+            <summary>
+            Post请求必填项
+            </summary>
+            <param name="pages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.orderTest">
+            <summary>
+            测试排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:testApiSwagger.Controllers.WeatherForecastController.OmitFunc">
+            <summary>
+            忽略特性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:testApiSwagger.Controllers.PagesParams">
+            <summary>
+            分页类
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.Controllers.PagesParams.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.Controllers.PagesParams.PageIndex">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="T:testApiSwagger.Conventions.CustomerActionShowToDocConvention">
+            <summary>
+            实现IControllerModelConvention接口，分配控制器的Action显示到哪个swagger文档中
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Conventions.CustomerActionShowToDocConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerModel)">
+            <summary>
+            
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="T:testApiSwagger.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:testApiSwagger.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:testApiSwagger.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:testApiSwagger.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            This method gets called by the runtime. Use this method to add services to the container. 
+        </member>
+        <member name="M:testApiSwagger.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        </member>
+        <member name="T:testApiSwagger.SwaggerFilters.CustomerDocumentFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.SwaggerFilters.CustomerDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            这里对文档信息做自定义设置
+            </summary>
+            <param name="swaggerDoc"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:testApiSwagger.SwaggerFilters.CustomerOperationFilter">
+            <summary>
+            自定义操作过滤器
+            </summary>
+        </member>
+        <member name="M:testApiSwagger.SwaggerFilters.CustomerOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            这里可以对Action做自定义设置
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:testApiSwagger.WeatherForecast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.WeatherForecast.Date">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.WeatherForecast.TemperatureC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.WeatherForecast.TemperatureF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:testApiSwagger.WeatherForecast.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
